@@ -2,10 +2,24 @@ package com.example.taskmate.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.taskmate.R
 
+
+val OutFitFontFamily = FontFamily(
+    Font(R.font.outfitblack, FontWeight.Black),
+    Font(R.font.outfitbold, FontWeight.Bold),
+    Font(R.font.outfitextrabold, FontWeight.ExtraBold),
+    Font(R.font.outfitextralight, FontWeight.ExtraLight),
+    Font(R.font.outfitlight, FontWeight.Light),
+    Font(R.font.outfitmedium, FontWeight.Medium),
+    Font(R.font.outfitregular, FontWeight.Normal),
+    Font(R.font.outfitsemibold, FontWeight.SemiBold),
+    Font(R.font.outfitthin, FontWeight.Thin)
+)
 // Set of Material typography styles to start with
 val Typography = Typography(
     bodyLarge = TextStyle(

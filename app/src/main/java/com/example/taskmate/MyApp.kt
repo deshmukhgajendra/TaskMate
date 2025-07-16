@@ -26,7 +26,4 @@ class MyApp : Application(), Configuration.Provider {
         scheduleOverdueTaskNotifier(this)
 
     }
-
-
-
 }

@@ -76,6 +76,8 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -84,6 +86,7 @@ import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.example.taskmate.R
 import com.example.taskmate.model.Task
+import com.example.taskmate.ui.theme.OutFitFontFamily
 import com.example.taskmate.ui.theme.TaskMateTheme
 import com.example.taskmate.utils.isOverdue
 import dagger.hilt.android.AndroidEntryPoint
@@ -172,6 +175,7 @@ fun app(paddingValues: PaddingValues,viewModel: ViewModel= hiltViewModel()){
         }
     }
 
+    // to select task date
     if (showDatePicker) {
         DatePickerDialog(
             onDismissRequest = { showDatePicker = false },
@@ -269,7 +273,7 @@ fun app(paddingValues: PaddingValues,viewModel: ViewModel= hiltViewModel()){
                             ) {
                                 menuItemData.forEach { item ->
                                     DropdownMenuItem(
-                                        text = { Text(item) },
+                                        text = { Text(item), },
                                         onClick = {
                                             selectedPriority = item
                                             expanded = false
@@ -325,6 +329,10 @@ fun app(paddingValues: PaddingValues,viewModel: ViewModel= hiltViewModel()){
                 title = {
                     Text(
                         "TaskMate",
+                        style = TextStyle(
+                            fontFamily = OutFitFontFamily,
+                            fontWeight = FontWeight.Normal
+                        ),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
                     )
@@ -535,14 +543,14 @@ fun SwipeToDismissTask(
                             text = task.title,
                             style = MaterialTheme.typography.titleMedium.copy(
                                 textDecoration = if (task.isCompleted) TextDecoration.LineThrough else TextDecoration.None,
-                                color = if (isOverdue) Color.Red else Color.Unspecified // 🔴 Red if overdue
+                                color = if (isOverdue) Color.Red else Color.Unspecified
                             )
                         )
                         Text(
                             text = task.description,
                             style = MaterialTheme.typography.bodyMedium.copy(
                                 textDecoration = if (task.isCompleted) TextDecoration.LineThrough else TextDecoration.None,
-                                color = if (isOverdue) Color.Red else Color.Unspecified // 🔴 Red if overdue
+                                color = if (isOverdue) Color.Red else Color.Unspecified
                             )
                         )
                     }
