@@ -81,6 +81,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -115,6 +116,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// getting runtime permissions from user
 @RequiresApi(Build.VERSION_CODES.TIRAMISU)
 private fun requestNotificationPermission(context: Context) {
     if (ContextCompat.checkSelfPermission(
@@ -273,7 +275,7 @@ fun app(paddingValues: PaddingValues,viewModel: ViewModel= hiltViewModel()){
                             ) {
                                 menuItemData.forEach { item ->
                                     DropdownMenuItem(
-                                        text = { Text(item), },
+                                        text = { Text(item) },
                                         onClick = {
                                             selectedPriority = item
                                             expanded = false
@@ -331,7 +333,8 @@ fun app(paddingValues: PaddingValues,viewModel: ViewModel= hiltViewModel()){
                         "TaskMate",
                         style = TextStyle(
                             fontFamily = OutFitFontFamily,
-                            fontWeight = FontWeight.Normal
+                            fontWeight = FontWeight.SemiBold,
+                            fontSize = 35.sp
                         ),
                         maxLines = 1,
                         overflow = TextOverflow.Ellipsis
@@ -596,7 +599,10 @@ fun PrioritySection(
                 Text(
                     text = title,
                     color = Color.White,
-                    style = MaterialTheme.typography.bodyLarge
+                    style = TextStyle(
+                        fontFamily = OutFitFontFamily,
+                        fontWeight = FontWeight.Bold
+                    ),
                 )
             }
 
