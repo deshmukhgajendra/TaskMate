@@ -1,6 +1,6 @@
 # 📋 TaskMate – Your Personal Daily Task Scheduler
 
-**TaskMate** is a modern task management Android app built as part of an assessment challenge. It helps users effortlessly schedule and manage their daily routine with a clean UI, offline support, real-time syncing, and overdue task reminders.
+**TaskMate** is a task management Android app built as part of an assessment challenge. It helps users effortlessly schedule and manage their daily routine with a clean UI, offline support, real-time syncing, and overdue task reminders.
 
 ---
 
