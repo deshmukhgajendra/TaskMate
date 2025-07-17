@@ -94,4 +94,10 @@ class ViewModel @Inject constructor(
             getAllTasks()
         }
     }
+
+//    fun uploaddata(){
+//        viewModelScope.launch {
+//            repository.uploadUnsyncedTasks()
+//        }
+//    }
 }

@@ -141,6 +141,7 @@ fun app(paddingValues: PaddingValues,viewModel: ViewModel= hiltViewModel()){
        // viewModel.insertTask()
         //viewModel.getAllTasks()
         viewModel.fetchAllPriorityTasks()
+      //  viewModel.uploaddata()
     }
 
     val highPriorityTasks by viewModel.highTasks.collectAsState()
@@ -305,6 +306,7 @@ fun app(paddingValues: PaddingValues,viewModel: ViewModel= hiltViewModel()){
                                     isCompleted = false
                                 )
                                 viewModel.insertTask(newTask)
+                               // viewModel.uploaddata()
                             }
                             isBottomSheetVisible = false
                         }

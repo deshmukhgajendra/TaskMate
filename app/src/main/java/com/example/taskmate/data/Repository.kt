@@ -59,11 +59,11 @@ class Repository @Inject constructor(
                 if (response.isSuccessful) {
                     dao.updateTask(task.copy(isSynced = true))
                 } else {
-                    Log.e("Sync", "Upload failed for task: ${task.title}, response: ${response.code()}")
+                    Log.e("gajendra", "Upload failed : ${task.title}, response: ${response.code()}")
                 }
 
             } catch (e: Exception) {
-                Log.e("Sync", "Exception while uploading task: ${task.title}", e)
+                Log.e("gajendra", "Exception on uploading task: ${task.title}", e)
             }
         }
     }
